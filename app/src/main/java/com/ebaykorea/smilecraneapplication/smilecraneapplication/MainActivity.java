@@ -37,9 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
         // 웹뷰 세팅
         mWebView = (WebView)findViewById(R.id.webview); //레이어와 연결
+        WebChromeClient webChromeClient = new WebChromeClient();
         mWebView .setWebViewClient(new WebViewClient()); // 클릭시 새창 안뜨게
+        mWebView.setWebChromeClient(webChromeClient);
         mWebSettings = mWebView.getSettings(); //세부 세팅 등록
         mWebSettings.setJavaScriptEnabled(true); // 자바스크립트 사용 허용
+
+        //mWebView.loadUrl("http://naver.com"); //원하는 URL  입력
 
         mWebView.loadUrl("http://192.168.1.231:8080/browserfs.html"); //원하는 URL  입력
 
