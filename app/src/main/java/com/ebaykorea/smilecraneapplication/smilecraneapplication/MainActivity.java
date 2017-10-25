@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         //mWebView.loadUrl("http://naver.com"); //원하는 URL  입력
 
-        mWebView.loadUrl("http://192.168.1.231:8080/browserfs.html"); //원하는 URL  입력
+        mWebView.loadUrl("http://192.168.1.175:8080/browserfs.html"); //원하는 URL  입력
 
         initButtonTouchListener(leftButton, "left");
         initButtonTouchListener(rightButton, "right");
