@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
         mWebView.loadUrl("http://192.168.1.175:8080/browserfs.html"); //원하는 URL  입력
 
-        initButtonTouchListener(leftButton, "left");
-        initButtonTouchListener(rightButton, "right");
-        initButtonTouchListener(upButton, "up");
-        initButtonTouchListener(downButton, "down");
+        initButtonTouchListener(leftButton, "LEFT");
+        initButtonTouchListener(rightButton, "RIGHT");
+        initButtonTouchListener(upButton, "UP");
+        initButtonTouchListener(downButton, "DOWN");
         initButtonClickListener(bbaemButton, "bbaem");
 
     }
@@ -60,6 +60,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this,
                         btnName + " is clicked!", Toast.LENGTH_SHORT).show();
+
+                CraneThread thre = new CraneThread();
+
+                thre.buttonType = "ZDOWN";
+                thre.status = "ON";
+
+                thre.run();
+
             }
         });
     }
@@ -71,17 +79,30 @@ public class MainActivity extends AppCompatActivity {
                 ImageButton b = (ImageButton) v;
 
                 int action = event.getAction();
+                String status = "";
+
+                CraneThread thread = new CraneThread();
 
                 if(action==MotionEvent.ACTION_DOWN){
                     //버튼 눌렀을때
                     Toast.makeText(MainActivity.this,
                             btnName + " is down!", Toast.LENGTH_SHORT).show();
+                    status = "ON";
+
                 }
                 else if(action==MotionEvent.ACTION_UP){
                     //버튼 땠을때
                     Toast.makeText(MainActivity.this,
                             btnName + " is up!", Toast.LENGTH_SHORT).show();
+                    status = "OFF";
                 }
+                else{
+                    return false;
+                }
+                thread.buttonType = btnName;
+                thread.status = status;
+
+                thread.run();
 
                 return false;
             }
