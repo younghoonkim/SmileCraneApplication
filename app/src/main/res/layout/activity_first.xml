@@ -12,5 +12,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:onClick="onClick"
-        app:srcCompat="@color/colorAccent" />
+        android:padding="0sp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/first" />
 </android.support.constraint.ConstraintLayout>

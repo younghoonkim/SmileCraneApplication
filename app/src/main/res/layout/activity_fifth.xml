@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ebaykorea.smilecraneapplication.smilecraneapplication.ThirdActivity">
+    tools:context="com.ebaykorea.smilecraneapplication.smilecraneapplication.FifthActivity">
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -13,5 +13,5 @@
         android:onClick="onClick"
         android:padding="0sp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/third" />
+        app:srcCompat="@drawable/fifth" />
 </android.support.constraint.ConstraintLayout>

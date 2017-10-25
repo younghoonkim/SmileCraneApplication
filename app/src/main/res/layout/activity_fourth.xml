@@ -11,5 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:onClick="onClick"
-        app:srcCompat="@color/colorPrimaryDark" />
+        android:padding="0sp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/fourth" />
 </android.support.constraint.ConstraintLayout>
